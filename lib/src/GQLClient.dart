@@ -66,7 +66,7 @@ class GQLClient {
       Map<String, dynamic> variables,
       Map<String, String> headers}) async {
     try {
-      return await post(_url,
+      return await post(Uri.parse(_url),
               headers: (headers ?? _headers)
                 ..putIfAbsent('content-type', () => 'application/json'),
               body: jsonEncode({'query': query, 'variables': variables}))
@@ -113,7 +113,7 @@ class GQLClient {
       Map<String, dynamic> variables,
       Map<String, String> headers}) async {
     try {
-      return await post(_url,
+      return await post(Uri.parse(_url),
               headers: (headers ?? _headers)
                 ..putIfAbsent('content-type', () => 'application/json')
                 ..putIfAbsent('accept', () => 'application/json'),

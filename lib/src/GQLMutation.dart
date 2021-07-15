@@ -31,7 +31,7 @@ Future<GQLMsg> mutation(
     @required String mutation,
     Map<String, dynamic> variables,
     Map<String, String> headers}) async {
-  return await post(url,
+  return await post(Uri.parse(url),
           headers: (headers ?? {})
             ..putIfAbsent('content-type', () => 'application/json')
             ..putIfAbsent('accept', () => 'application/json'),
